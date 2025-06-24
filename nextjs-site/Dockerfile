@@ -1,8 +1,10 @@
-FROM node:18-alpine
+FROM node:24.1.0
 
 WORKDIR /app
-COPY site/ .                      # ← copy submodule contents
+COPY site/ /app/
 
+RUN pwd
+RUN ls
 RUN npm install && npm run build
 
 EXPOSE 3000
