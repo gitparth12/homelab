@@ -1,0 +1,22 @@
+services:
+  caddy:
+    image: caddy:alpine
+    container_name: caddy
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data
+      - caddy_config:/config
+    networks:
+      - pteronet
+
+volumes:
+  caddy_data:
+  caddy_config:
+
+networks:
+  pteronet:
+    external: true
