@@ -1,0 +1,1 @@
+[2025-06-25 16:37:59] production.NOTICE: A query exception was encountered while trying to load settings from the database: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'panel.settings' doesn't exist (Connection: mysql, SQL: select * from `settings`)  

@@ -3,4 +3,5 @@
 *.key
 *.json
 secrets/
+*/database/
 
