@@ -2,7 +2,3 @@ panel.parthbhargava.com {
   reverse_proxy pterodactyl_panel:80
 }
 
-node.parthbhargava.com {
-  reverse_proxy pterodactyl_wings:2022
-}
-
