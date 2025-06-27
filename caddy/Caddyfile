@@ -1,3 +1,7 @@
 panel.parthbhargava.com {
 	reverse_proxy pterodactyl_panel:80
 }
+
+node.parthbhargava.com {
+    reverse_proxy wings:8880
+}

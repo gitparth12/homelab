@@ -27,6 +27,23 @@ services:
     networks:
       - pteronet
 
+  wings:
+    image: ghcr.io/pterodactyl/wings:latest
+    container_name: wings
+    restart: unless-stopped
+    volumes:
+      - /etc/pterodactyl/config.yml:/etc/pterodactyl/config.yml
+      - /var/lib/pterodactyl/volumes:/var/lib/pterodactyl/volumes
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /tmp/pterodactyl:/tmp/pterodactyl
+      - /etc/ssl/certs:/etc/ssl/certs:ro
+    expose:
+      - "8880"
+    networks:
+      - pteronet
+    environment:
+      TZ: "Australia/Sydney"
+
   database:
     image: mariadb:10.5
     container_name: pterodactyl_db
