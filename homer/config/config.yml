@@ -4,7 +4,8 @@ subtitle: "Walkx"
 logo: "logo.png"
 
 header: false
-footer: '<p>Theme made with <span class="has-text-danger">❤️</span> by <a href="https://github.com/WalkxCode">Walkx</a></p>' # Set false if you want to hide it.
+footer: false
+# footer: '<p>Theme made with <span class="has-text-danger">❤️</span> by <a href="https://github.com/WalkxCode">Walkx</a></p>' # Set false if you want to hide it.
 
 stylesheet:
   - "assets/custom.css"
@@ -42,24 +43,24 @@ colors:
     background-image: "../assets/wallpaper.jpeg"
 
 services:
-  - name: "//GitHub"
-    icon: "fas fa-github"
+  - name: "GitHub"
+    icon: "fa-brands fa-github"
     items:
-      - name: "Homer Theme"
-        logo: "assets/tools/walkx.png" # Change github.png to the name of your own custom icon!
-        subtitle: "The official Homer Theme github!"
+      - name: "My GitHub profile"
+        logo: "assets/tools/git.svg" # Change github.png to the name of your own custom icon!
+        subtitle: "Keep that contribution graph filled ;)"
         tag: "github"
         tagstyle: "is-primary" # This will display the is-primary color! Try changing it to; is-link, is-info, is-success, is-warning or is-danger!
-        url: "https://github.com/WalkxCode/Homer-Theme"
+        url: "https://github.com/gitparth12"
         target: "_blank"
 
-  - name: "//Reddit"
-    icon: "fas fa-reddit"
+  - name: "Pterodactyl"
+    icon: "fa-solid fa-cube"
     items:
-      - name: "The original reddit post!"
-        logo: "assets/tools/reddit.png"
-        subtitle: "Yes... this is Homer."
-        tag: "reddit"
+      - name: "Minecraft Panel"
+        logo: "assets/tools/pterodactyl.svg"
+        subtitle: "Server management made easy"
+        tag: "minecraft"
         tagstyle: "is-info"
-        url: "https://www.reddit.com/r/selfhosted/comments/q9e82c/yes_this_is_homer_yes_i_spent_2_hours_customizing/"
+        url: "https://panel.parthbhargava.com"
         target: "_blank"
