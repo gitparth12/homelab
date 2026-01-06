@@ -35,7 +35,7 @@ services:
       - /etc/pterodactyl/config.yml:/etc/pterodactyl/config.yml
       - /var/lib/pterodactyl/volumes:/var/lib/pterodactyl/volumes
       - /var/run/docker.sock:/var/run/docker.sock
-      - /tmp/pterodactyl:/tmp/pterodactyl
+      - /tmp:/tmp
       - /etc/ssl/certs:/etc/ssl/certs:ro
     expose:
       - "8880"
