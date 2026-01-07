@@ -4,4 +4,5 @@
 *.json
 secrets/
 */database/
+authelia/config/
 

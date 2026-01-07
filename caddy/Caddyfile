@@ -10,3 +10,7 @@ node.parthbhargava.com {
         header_up X-Forwarded-Proto {scheme}
     }
 }
+
+auth.parthbhargava.com {
+  reverse_proxy authelia:9091
+}
