@@ -1,0 +1,20 @@
+permit_join: true
+homeassistant:
+  enabled: true
+mqtt:
+  base_topic: zigbee2mqtt
+  server: mqtt://mosquitto:1883
+serial:
+  port: /dev/ttyACM0
+  adapter: ember
+frontend:
+  enabled: true
+  port: 8080
+version: 5
+devices:
+  '0x348d13fffee32595':
+    friendly_name: standing_lamp
+  '0x348d13fffeeaab62':
+    friendly_name: bedside_lamp_2
+  '0x348d13fffee32974':
+    friendly_name: bedside_lamp_1

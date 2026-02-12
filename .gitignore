@@ -5,4 +5,7 @@
 secrets/
 */database/
 authelia/config/
-
+zigbee/homeassistant/config/
+zigbee/mosquitto/
+zigbee/zigbee2mqtt/data/*
+!zigbee/zigbee2mqtt/data/configuration.yaml
