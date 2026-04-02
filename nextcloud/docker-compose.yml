@@ -1,0 +1,33 @@
+services:
+  db:
+    image: postgres:15
+    container_name: nextcloud-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: nextcloud
+      POSTGRES_USER: nextcloud
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - /srv/nextcloud/db:/var/lib/postgresql/data
+
+  app:
+    image: nextcloud:latest
+    container_name: nextcloud-app
+    restart: unless-stopped
+    environment:
+      POSTGRES_HOST: db
+      POSTGRES_DB: nextcloud
+      POSTGRES_USER: nextcloud
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - /srv/nextcloud/app:/var/www/html
+      - /srv/nextcloud/data:/var/www/html/data
+    depends_on:
+      - db
+    networks:
+      - proxy
+      - default
+
+networks:
+  proxy:
+    external: true

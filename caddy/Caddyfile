@@ -37,3 +37,28 @@ portainer.parthbhargava.com {
     header_up X-Forwarded-For {remote}
   }
 }
+
+# authelia redirect for nextcloud ui 
+cloud.parthbhargava.com {
+    forward_auth authelia:9091 {
+        uri /api/verify?rd=https://auth.parthbhargava.com/?rd=https://cloud.parthbhargava.com{uri}
+        copy_headers Remote-User Remote-Groups Remote-Name Remote-Email
+    }
+
+    reverse_proxy http://nextcloud-app:80 {
+        header_up Host {host}
+        header_up X-Forwarded-Host {host}
+        header_up X-Forwarded-Proto https
+        header_up X-Forwarded-For {remote}
+    }
+}
+
+# bypass authelia for webdav (auth handled through app passwords)
+dav.parthbhargava.com {
+    reverse_proxy nextcloud-app:80 {
+        header_up Host {host}
+        header_up X-Forwarded-Host {host}
+        header_up X-Forwarded-Proto https
+        header_up X-Forwarded-For {remote}
+    }
+}
