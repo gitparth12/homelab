@@ -40,6 +40,10 @@ portainer.parthbhargava.com {
 
 # authelia redirect for nextcloud ui 
 cloud.parthbhargava.com {
+    header {
+      Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+    }
+
     forward_auth authelia:9091 {
         uri /api/verify?rd=https://auth.parthbhargava.com/?rd=https://cloud.parthbhargava.com{uri}
         copy_headers Remote-User Remote-Groups Remote-Name Remote-Email
@@ -55,10 +59,17 @@ cloud.parthbhargava.com {
 
 # bypass authelia for webdav (auth handled through app passwords)
 dav.parthbhargava.com {
+    header {
+      Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+    }
     reverse_proxy nextcloud-app:80 {
         header_up Host {host}
         header_up X-Forwarded-Host {host}
         header_up X-Forwarded-Proto https
         header_up X-Forwarded-For {remote}
     }
+}
+
+finance.parthbhargava.com {
+    reverse_proxy firefly_app:8080
 }

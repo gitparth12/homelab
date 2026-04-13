@@ -1,0 +1,53 @@
+services:
+  db:
+    image: mariadb:11
+    container_name: firefly_db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_DATABASE: firefly
+      MYSQL_USER: firefly
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - firefly_db:/var/lib/mysql
+    networks:
+      - internal
+
+  app:
+    image: fireflyiii/core:latest
+    container_name: firefly_app
+    restart: unless-stopped
+    depends_on:
+      - db
+    env_file:
+      - .env
+    volumes:
+      - firefly_upload:/var/www/html/storage/upload
+    networks:
+      - internal
+      - proxy
+
+  importer:
+    image: fireflyiii/data-importer:latest
+    container_name: firefly_importer
+    restart: unless-stopped
+    depends_on:
+      - app
+    environment:
+      FIREFLY_III_URL: http://app:8080
+      VANITY_URL: https://finance.parthbhargava.com
+    volumes:
+      - ./import:/import
+    ports:
+      - "8081:8080"
+    networks:
+      - internal
+
+volumes:
+  firefly_db:
+  firefly_upload:
+
+networks:
+  internal:
+  proxy:
+    external: true
