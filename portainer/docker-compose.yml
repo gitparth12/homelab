@@ -1,6 +1,6 @@
 services:
   portainer:
-    image: portainer/portainer-ee:2.27.7
+    image: portainer/portainer-ee:lts
     container_name: portainer
     restart: always
     ports:

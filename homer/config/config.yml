@@ -64,3 +64,58 @@ services:
         tagstyle: "is-info"
         url: "https://panel.parthbhargava.com"
         target: "_blank"
+
+  - name: "Portainer"
+    icon: "fa-brands fa-docker"
+    items:
+      - name: "Docker Dashboard"
+        logo: "assets/tools/pterodactyl.svg"
+        subtitle: "Manage all things docker, including containers and stacks. TODO find a way to give portainer proper access to containers made externally."
+        tag: "docker"
+        tagstyle: "is-info"
+        url: "https://portainer.parthbhargava.com"
+        target: "_blank"
+
+  - name: "Adguard Home"
+    icon: "fa-solid fa-shield-halved"
+    items:
+      - name: "DNS Ad blocker Dashboard"
+        logo: "assets/tools/pterodactyl.svg"
+        subtitle: "Look at blocked or allowed requests, manage filter lists, or DNS resolution rules for unbound."
+        tag: "adblock"
+        tagstyle: "is-info"
+        url: "http://192.168.0.228:8090"
+        target: "_blank"
+
+  - name: "Zigbee2MQTT"
+    icon: "fa-solid fa-hexagon-nodes"
+    items:
+      - name: "Zigbee Hub Dashboard"
+        logo: "assets/tools/pterodactyl.svg"
+        subtitle: "Manage devices connected through the Zigbee protocol"
+        tag: "smart-home"
+        tagstyle: "is-info"
+        url: "http://192.168.0.228:8099"
+        target: "_blank"
+
+  - name: "Home Assistant"
+    icon: "fa-solid fa-house-signal"
+    items:
+      - name: "Smart Home Dashboard"
+        logo: "assets/tools/pterodactyl.svg"
+        subtitle: "Manage smart home devices, zigbee or otherwise. Currently only supports zigbee."
+        tag: "smart-home"
+        tagstyle: "is-info"
+        url: "http://192.168.0.228:8123"
+        target: "_blank"
+
+  - name: "Nextcloud"
+    icon: "fa-solid fa-cloud"
+    items:
+      - name: "Cloud Storage"
+        logo: "assets/tools/pterodactyl.svg"
+        subtitle: "My own personal cloud storage, limited by the hardware in the homelab so don't store too much :P"
+        tag: "cloud"
+        tagstyle: "is-info"
+        url: "https://cloud.parthbhargava.com"
+        target: "_blank"
